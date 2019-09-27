@@ -1,0 +1,16 @@
+.main-container {
+  padding-left: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-location {
+  padding-top: 10px;
+}
+.loadMore {
+  margin: 5px 0;
+  padding: .78571429em 1.5em .78571429em;
+}
+.inputPlace {
+  width: 100%;
+}

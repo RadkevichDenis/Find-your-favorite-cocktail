@@ -1,0 +1,12 @@
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+}
+.header-text {
+  font-size: 15pt;
+  font-weight: bold;
+  padding: 10px;
+
+}

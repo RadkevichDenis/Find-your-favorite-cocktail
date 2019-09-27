@@ -1,0 +1,17 @@
+.radio-location {
+  display: flex;
+  flex-direction: column;
+}
+.indent {
+  margin: 10px 0;
+  font-style: italic;
+}
+.span-location {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 7px;
+  font-style: italic;
+}
+.tabMenu {
+  width: 25%;
+}
