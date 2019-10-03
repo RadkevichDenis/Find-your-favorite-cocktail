@@ -66,10 +66,12 @@ class MainScreen extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.currentCategory !== this.state.currentCategory) {
-      this.getCocktails()
+      this.getCocktails();
+      this.setState({ querry: ''})
     };
     if (prevState.currentIngridient !== this.state.currentIngridient) {
-      this.getCurrentIngridient()
+      this.getCurrentIngridient();
+      this.setState({ querry: ''})
     }
   }
 

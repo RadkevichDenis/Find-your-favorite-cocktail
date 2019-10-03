@@ -8,16 +8,18 @@ class Main extends Component {
   state = {
     currentPage: 1,
     load: false,
+    length: 0
   }
 
   loadMoreCocktails = () => {
     const currentPage = this.state.currentPage + 1;
-    this.setState({ currentPage })
+    const length = this.state.length + 12;
+    this.setState({ currentPage, length });
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
-      this.setState({ currentPage: 1 })
+      this.setState({ currentPage: 1, length: 0 })
     };
   }
 
@@ -28,20 +30,9 @@ class Main extends Component {
           placeholder='Search in current categories...'
           size='large'
           fluid={true}
-          list='cocktailsName'
           className='inputPlace'
           onChange={this.props.changeQuerry}
         />
-        <datalist id='cocktailsName'>
-          {this.props.cocktails
-            .filter(item => item.strDrink.toLowerCase().includes(this.props.querry))
-            .map((item,index) => (
-            <option
-              key={index}
-              value={item.strDrink}
-            />)
-          )}
-        </datalist>
 
         <Card.Group className='card-location' itemsPerRow={4}>
           {this.props.cocktails
@@ -58,7 +49,7 @@ class Main extends Component {
             ))
           }
         </Card.Group>
-        {this.props.cocktails.length > 12 &&
+        {this.props.cocktails.length > 12 && this.state.length <= this.props.cocktails.length &&
           <div className='loadMore'>
             <Button
               color='violet'
